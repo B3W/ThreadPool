@@ -1,3 +1,6 @@
+# References:
+# https://docs.python.org/3/library/queue.html
+# https://stackoverflow.com/a/7257510
 '''
 Module providing functionality similar to multiprocessing.ThreadPool
 '''
@@ -8,10 +11,16 @@ import threading
 class ThreadPool(object):
     @staticmethod
     def __terminator():
+        '''
+        Dummy function for terminating threads
+        '''
         pass
 
     @staticmethod
     def __worker(task_queue):
+        '''
+        Behavior for thread to execute
+        '''
         while True:
             # Get task when available
             func, args, kwargs = task_queue.get()
