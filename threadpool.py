@@ -62,7 +62,7 @@ class ThreadPool(object):
 
     def __init__(self, num_threads):
         self.threads = []  # Keeps track of threads
-        self.task_queue = queue.Queue(num_threads)  # Tracks tasks
+        self.task_queue = queue.Queue()  # Tracks tasks, unbounded
 
         # Create threads for thread pool
         for i in range(num_threads):
@@ -74,7 +74,7 @@ class ThreadPool(object):
 
     def add_task(self, func, *args, **kwargs):
         '''
-        Adds task to task queue. Blocks until queue slot is available.
+        Adds task to task queue
         '''
         queue_item = (func, args, kwargs)
         self.task_queue.put(queue_item)
