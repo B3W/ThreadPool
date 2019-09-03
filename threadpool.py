@@ -24,7 +24,8 @@
 # https://docs.python.org/3/library/queue.html
 # https://stackoverflow.com/a/7257510
 '''
-Module providing functionality similar to multiprocessing.ThreadPool
+Module providing functionality similar to 
+ThreadPoolExecutor/multiprocessing.ThreadPool
 '''
 import queue
 import threading
